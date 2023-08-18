@@ -1,3 +1,5 @@
+#applying strings and variables
+
 n = "Nouns"
 t = "Mr. Alican"
 p = "PCC"
