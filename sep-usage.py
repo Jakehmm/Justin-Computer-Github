@@ -1,5 +1,5 @@
 #use sep once at end 
-print("Luffy, Sabo, Ace", sep=",")
+print("Luffy" ,"Sabo" ,"Ace", sep=",")
 
 print("Male","19", "Male", "22" , "Male" ,"20" ,sep="/")
 
