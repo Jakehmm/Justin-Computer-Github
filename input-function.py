@@ -7,3 +7,5 @@ name = input("Who are you? ")
 # Say hello to the user (+ , |used to join)
 print("hello,", name)
 print("hello, " + name)
+
+print("me")
