@@ -1,3 +1,5 @@
+#2 Ways - Readability
+
 # using f string
 name = input("What's your name? ")
 print(f"hello, {name}")
