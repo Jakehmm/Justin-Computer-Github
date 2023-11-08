@@ -1,7 +1,9 @@
+#1
 guest_list = ['A' , 'B' , 'C' , 'D' , 'E' , 'F']
 message = "Hey guys, I'm sorry we won't be having enough tables"
 print(message)
 
+#2
 A = guest_list.pop(0)
 messageA = "I'm extremly sorry"
 print(f'{messageA}, {A}')
@@ -18,9 +20,11 @@ D = guest_list.pop(0)
 messageD = "I'm extremly sorry"
 print(f'{messageD}, {D}')
 
+#3
 message1 = f'{guest_list[0]}, {guest_list[1]}'
 print(f'Hey, {message1}, I wanted to let you both know, you guys are still invited!')
 
+#4
 del guest_list[0]
 del guest_list[0]
 print()
