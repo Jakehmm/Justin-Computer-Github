@@ -12,3 +12,6 @@ for countries in country:
 shaft = ['list' , 'bingbong']
 for shafties in shaft:
     print(f"Nigerian likes {shafties}")
+
+#Basic loop functions, for ___ in ____ 
+# For every magician in the list of magicians, print the magician's name
