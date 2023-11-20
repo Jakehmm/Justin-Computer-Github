@@ -1,14 +1,12 @@
-#list = ['jai' , 'mor' , 'rant']
-#list.append("k")
-#x = list.pop(3)
-#print(sorted(list))
+brackets = ['I' , 'Am' , 'So', 'Lazy' , 'to', 'do', 'shit']
+brackets.sort(reverse = True)
+brackets.pop(0)
+brackets.remove('I')
 
-numbers = list(range(0,11))
-print(numbers)
-
-
-brackets = []
-x = list(range(0,11))
-x.pop(3)
-brackets.append(x)
+for value in range(0,10):
+    brackets.append(value)
 print(brackets)
+
+name = ['Xavier', 'Jake', 'Seco', 'Everyone']
+for names in name:
+    print(f'{names} is gay')
