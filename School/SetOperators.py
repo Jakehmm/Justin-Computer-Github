@@ -11,3 +11,5 @@ print(s4)
 # .symmetric_difference - get both values of the one you picked
 # instead of only one
 # try yourself or u wont understand
+
+print((s3).symmetric_difference(s1))
