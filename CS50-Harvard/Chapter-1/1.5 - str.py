@@ -3,7 +3,9 @@ Here we'll be introducing strings and functions we can do to a string
 
 ( fstring ) - This a special function that strings variables together
 ( strip ) - This is for removing white space
-( capitalize) - Capitalizing the first letter
+( capitalize ) - Capitalizing the first letter
+( title ) - Capitalize everything
+( split ) - Splitting the input
 '''
 
 # Note: The variable "name" is also a string 
@@ -18,6 +20,10 @@ name = name.capitalize()
 
 # This is to capitilize the FULL INPUT
 name = name.title()
+
+# This is to split the input ( just keep on trying it's pretty fun )
+first, second, third = name.split(" ")
+print(f"Hello, {third}")
 
 '''
 as title() suggest, think of a book, we usually 
