@@ -63,7 +63,7 @@ but it is not string"ed, we're essentially just assigning.
 '''
 
 plus_name = input("5: What's your name? ")
-print("Hello, " + name)
+print("Hello, " + plus_name)
 
 '''
 Output: Hello, (What you inputed)
