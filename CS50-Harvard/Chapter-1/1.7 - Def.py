@@ -41,6 +41,7 @@ def square(n):
 print(square (x)+ square(y))
 '''
 
+'''
 def numbers(num="Please input an number :) "):
     print(num)
     x = int(input("Enter a digit: "))
@@ -53,3 +54,26 @@ def divide(q, p):
 
 
 numbers()
+'''
+
+'''
+One essential thing about def is the input u have put acts
+as an replacement and will be transferred into the main function
+'''
+
+'''
+def greet(person):
+    if "i" in person:
+        print(f"Hello, {person}")
+    else:
+        print("Type the letter i")
+
+ask_username = input("Your name please: ")
+greet(ask_username)
+
+'''
+EXPECTED_BAKE_TIME = 40
+def bake_time_remaining(elapsed_bake_time):
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
+
+bake_time_remaining(30)
