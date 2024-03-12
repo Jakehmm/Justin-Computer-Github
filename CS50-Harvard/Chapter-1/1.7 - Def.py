@@ -61,7 +61,7 @@ One essential thing about def is the input u have put acts
 as an replacement and will be transferred into the main function
 '''
 
-'''
+
 def greet(person):
     if "i" in person:
         print(f"Hello, {person}")
@@ -71,9 +71,3 @@ def greet(person):
 ask_username = input("Your name please: ")
 greet(ask_username)
 
-'''
-EXPECTED_BAKE_TIME = 40
-def bake_time_remaining(elapsed_bake_time):
-    return EXPECTED_BAKE_TIME - elapsed_bake_time
-
-bake_time_remaining(30)
