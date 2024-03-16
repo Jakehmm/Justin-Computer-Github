@@ -13,17 +13,24 @@
 != : 
 
 '''
+import math
 
-def divide_square(to_square,to_divide) -> int:
-    if to_divide >= to_square:
-        raise ValueError("Try a lower number.")
-    if to_divide == to_square:
-        raise ValueError("No equivalent numbers, sorry")
-    return to_square **2 / to_divide
+def square_divide(squared_value,divided_value_square) -> int:
+    if squared_value < divided_value_square:
+        raise ValueError ("Squared value cannot be less than divided value")
+    if squared_value == divided_value_square:
+        raise ValueError("Cannot be equal")
+    return squared_value **2 / divided_value_square
 
-square_value = int(input("Input a number you want it to be squared: "))
-divide_value = int(input("Input the number you want to divide from the squared number: "))
+x = int(input("Input x: "))
+y = int(input("Input y: "))
+print(f"Your final value is {square_divide(x,y)}")
 
+def squareroot(squared_value,divided_value_square) -> int:
+    return math.sqrt(square_divide(squared_value,divided_value_square))
 
-result = divide_square(square_value,divide_value)
-print(result)
+print(squareroot(x,y))
+
+def all(squared_value,divided_value_square) -> int:
+    return squareroot(squared_value,divided_value_square) + (square_divide(squared_value,divided_value_square))
+print(all(x,y))
