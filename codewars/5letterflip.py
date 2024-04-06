@@ -1,1 +1,0 @@
-#Stop gninnipS My sdroW!
