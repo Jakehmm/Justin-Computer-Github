@@ -1,7 +1,7 @@
 import random
 
 # Random number to let user guess
-guess_number = random.randint(1, 101)
+guess_number = random.randint(1, 21)
 guess_tries = 1
 
 # Ask user for guess
