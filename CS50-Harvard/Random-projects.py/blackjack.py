@@ -9,7 +9,7 @@ import random
 empty_deck = []
 
 suits = ['Hearts' , 'Spades' , 'Diamonds' , 'Clubs']
-number_cards = ['One' , 'Two' , 'Three' , 'Four' , 'Five' , 'Six', 'Seven' , 'Eight', 'Nine' ,'Ten']
+number_cards = ['Ace' , 'Two' , 'Three' , 'Four' , 'Five' , 'Six', 'Seven' , 'Eight', 'Nine' ,'Ten']
 face_cards = ['Jack' , 'Queen' , 'King']
 
 for suit in suits:
@@ -35,13 +35,13 @@ Rules of Blackjack 21 - 1v1
           
 ''')
 
-
+main()
 # Define a function when a player gets card
 def value_card(player_cards):
-    player_cards = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "J": 11, "Q": 12, "K" : 13 }
+    player_cards = {"Ace": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "Jack": 10, "Queen": 10, "King" : 10 }
     
 
-main()
+
 
 first_hand = empty_deck[random.randint(0,52)]
 second_hand = empty_deck[random.randint(0,52)]
@@ -71,7 +71,6 @@ Your cards are: ''')
     user_input_hd = input('''
 'Hit' or 'Draw'?
 > ''')
-    
     if user_input_hd[0].lower() == 'd': 
         player_cards.append(empty_deck[random.randint(0,52)])
 
