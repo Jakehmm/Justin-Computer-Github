@@ -38,24 +38,35 @@ Rules of Blackjack 21 - 1v1
 main()
 # Define a function when a player gets card
 # card_values will overwrite card_score ( if they had the same variable name)
-def value_card(card_values,dealers_cards):
+def value_card(player_cards,dealers_cards):
 
-    print(card_values)
+    print(player_cards)
     card_score = {"Ace": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "Jack": 10, "Queen": 10, "King" : 10 }
-    score = 0
-    for card in card_values:
+    player_score = 0
+    dealer_score = 0
+    for card in player_cards:
         card = card.split(" ")[0] # not commented out
 
         
-        print(score)
-        score += card_score.get(card, 0)
-    if score > 21:
-        print(f"You've lost, your score:", score)
-    
-    if card_values > dealers_cards:
-        print("You've lost! Dealer wins!")
+        
+        player_score += card_score.get(card, 0)
+
+    for cards in dealer_cards:
+        cards = cards.split(" ")[0] # not commented out
 
 
+        dealer_score += card_score.get(card, 0)
+    print(player_score)
+    print(dealer_score)
+
+    if player_score > 21 or dealer_score > 21:
+        print("You've lost!")
+    if player_score == dealer_score:
+        print("Draw")
+    elif player_score > dealer_score:
+        print("Player has won!")
+    else:
+        print("Dealer has won")
     
     
 
@@ -95,11 +106,13 @@ Your cards are: ''')
     player_cards.append(first_hand)
     player_cards.append(second_hand)
     print(player_cards)
+
     print("\n")
+
     print('''Dealers hand : ''')
     dealer_cards.append(dealers_first_hand)
     dealer_cards.append(dealers_second_hand)
-    print(dealer_cards)
+    print(f"First card : {dealer_cards[0]}, Second card : ")
     #Transport the value
     
 
