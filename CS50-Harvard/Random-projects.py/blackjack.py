@@ -38,8 +38,8 @@ Rules of Blackjack 21 - 1v1
 
 # Define a function when a player gets card
 def value_card(player_cards):
-    card_dict_value = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "J": 11, "Q": 12, "K" : 13 }
-    print(card_dict_value)
+    player_cards = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "J": 11, "Q": 12, "K" : 13 }
+    
 
 main()
 
@@ -76,14 +76,3 @@ Your cards are: ''')
         player_cards.append(empty_deck[random.randint(0,52)])
 
     elif user_input_hd[0].lower() == 'h':
-        print("Your value: ")
-        break
-print(player_cards)
-    
-   
-
-
-
-
-
-    
