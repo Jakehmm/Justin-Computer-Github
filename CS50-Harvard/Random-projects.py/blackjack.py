@@ -63,8 +63,8 @@ def value_card(player_cards,dealers_cards):
         print("You've lost!")
     if player_score == dealer_score:
         print("Draw")
-    elif player_score > dealer_score:
-        print("Player has won!")
+    elif player_score <= 21 and player_score > dealer_score:
+        print("Player has won")
     else:
         print("Dealer has won")
     
