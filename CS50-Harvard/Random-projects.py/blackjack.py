@@ -38,7 +38,7 @@ Rules of Blackjack 21 - 1v1
 main()
 # Define a function when a player gets card
 # card_values will overwrite card_score ( if they had the same variable name)
-def value_card(player_cards,dealers_cards):
+def value_card(player_cards,dealer_cards):
 
     print(player_cards)
     card_score = {"Ace": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "Jack": 10, "Queen": 10, "King" : 10 }
