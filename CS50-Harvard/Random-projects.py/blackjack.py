@@ -59,14 +59,18 @@ def value_card(player_cards,dealer_cards):
     print(player_score)
     print(dealer_score)
 
-    if player_score > 21 or dealer_score > 21:
-        print("You've lost!")
+    if player_score > 21: 
+        print("Player has lost!")
+    elif dealer_score > 21:
+        print("Dealer has lost!")
     if player_score == dealer_score:
-        print("Draw")
+        print("Draw") 
     elif player_score <= 21 and player_score > dealer_score:
         print("Player has won")
-    else:
-        print("Dealer has won")
+    elif dealer_score <= 21 and dealer_score > player_score:
+        print("Dealer has won!")
+    
+
     
     
 
@@ -103,17 +107,28 @@ Play? (y / n)
               
 Your cards are: ''')
         
+    # Player cards   
     player_cards.append(first_hand)
     player_cards.append(second_hand)
     print(player_cards)
 
     print("\n")
-
+    
+    # Dealer's card
+    dealer_card_decision = random.randint(1,2)
+    print(dealer_card_decision)
     print('''Dealers hand : ''')
     dealer_cards.append(dealers_first_hand)
     dealer_cards.append(dealers_second_hand)
     print(f"First card : {dealer_cards[0]}, Second card : ")
-    #Transport the value
+
+# Line break
+    print("\n")
+
+    # Decision making
+    print('''Dealer is deciding to hit a card or not....''')
+    if dealer_card_decision == 1:
+        dealer_cards.append(empty_deck[random.randint(0,52)])    
     
 
     user_input_hd = input('''
@@ -123,14 +138,11 @@ Your cards are: ''')
         player_cards.append(empty_deck[random.randint(0,52)])
         print(f"Your new card : {player_cards[2]}")
 
+    #Transport the value
     hand_value = value_card(player_cards,dealer_cards)
 
-    if user_input_hd[0].lower() == 's':
+    if user_input_hd[0].lower() == 's' and '2':
         print(hand_value)
     
-        break
-    break
-
-
-
-    
+        break # hit/stand break
+    break # main game loop break
