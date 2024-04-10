@@ -21,7 +21,7 @@ for suit in suits:
         empty_deck.append(face_card + ' of ' + suit)
 
 random.shuffle(empty_deck)
-print(empty_deck)
+
 
 
 def main():
@@ -31,9 +31,7 @@ Rules of Blackjack 21 - 1v1
 - If player or dealer goes over 21 (lose)
 - If player or dealer gets exactly 21 (auto-win)
 - Dealer will have one card shown, one card hidden
-- To draw a card enter (h)
-          
-''')
+- To draw a card enter (h)''')
 
 main()
 # Define a function when a player gets card
@@ -51,7 +49,7 @@ def value_card(player_cards,dealer_cards):
 
         card = card.split(" ")[0] # not commented out
         if card == 'Ace':
-            user_input = int(input('''You've gotten an Ace, 
+            user_input = int(input('''You have an Ace card in your deck, 
 Do you want to make your Ace 1 or 11?
 > '''))
             if user_input == 1:
@@ -104,9 +102,6 @@ player_cards = []
 # Main game loop 
 while True:
 
-   
-    
-
     user_input = input('''
 Play? (y / n)
 > ''')
@@ -143,7 +138,7 @@ Your cards are: ''')
 > ''')
     if user_input_hd[0].lower() == 'h': 
         player_cards.append(empty_deck[random.randint(0,52)])
-        print(f"Your new card : {player_cards[2]}")
+        print(f"Your new card : {player_cards[2]}, Your deck : {player_cards}" )
 
     #Transport the value
     hand_value = value_card(player_cards,dealer_cards)
