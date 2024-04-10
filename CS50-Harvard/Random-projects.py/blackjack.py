@@ -40,15 +40,26 @@ main()
 # card_values will overwrite card_score ( if they had the same variable name)
 def value_card(player_cards,dealer_cards):
 
-    print(player_cards)
+    # Card Values
     card_score = {"Ace": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six": 6, "Seven": 7, "Eight": 8, "Nine":9, "Ten":10, "Jack": 10, "Queen": 10, "King" : 10 }
+    
+
+    
     player_score = 0
     dealer_score = 0
     for card in player_cards:
-        card = card.split(" ")[0] # not commented out
 
-        
-        
+        card = card.split(" ")[0] # not commented out
+        if card == 'Ace':
+            user_input = int(input('''You've gotten an Ace, 
+Do you want to make your Ace 1 or 11?
+> '''))
+            if user_input == 1:
+                new_card = {'Ace':1}
+                card_score.update(new_card)
+            elif user_input == 11:
+                new_card = {'Ace':11}
+                card_score.update(new_card)
         player_score += card_score.get(card, 0)
 
     for cards in dealer_cards:
@@ -101,8 +112,8 @@ Play? (y / n)
 > ''')
     
     if user_input[0] == 'y':
-        print('''Dealer : Alrighty, let's start the game shall we?
-              
+        print('''Dealer : Alrighty, let's start the game shall we?    
+                     
 *Dealer distributes two cards*
               
 Your cards are: ''')
@@ -110,20 +121,16 @@ Your cards are: ''')
     # Player cards   
     player_cards.append(first_hand)
     player_cards.append(second_hand)
-    print(player_cards)
+    print(player_cards, '\n')
 
-    print("\n")
+    
     
     # Dealer's card
     dealer_card_decision = random.randint(1,2)
-    print(dealer_card_decision)
     print('''Dealers hand : ''')
     dealer_cards.append(dealers_first_hand)
     dealer_cards.append(dealers_second_hand)
-    print(f"First card : {dealer_cards[0]}, Second card : ")
-
-# Line break
-    print("\n")
+    print(f"First card : {dealer_cards[0]}, Second card : ", '\n')
 
     # Decision making
     print('''Dealer is deciding to hit a card or not....''')
