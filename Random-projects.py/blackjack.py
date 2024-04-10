@@ -148,7 +148,7 @@ Your cards are: ''')
     #Transport the value
     hand_value = value_card(player_cards,dealer_cards)
 
-    if user_input_hd[0].lower() == 's' and '2':
+    if user_input_hd[0].lower() == 's':
         print(hand_value)
     
         break # hit/stand break
