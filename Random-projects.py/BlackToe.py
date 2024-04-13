@@ -58,13 +58,15 @@ def value_of_cards(player_cards, bot_cards):
 
 def Player_placement(board):
     ask_user_placement = int(input("Enter the digit you want your piece to be placed : "))
-    board[ask_user_placement] == "x"
+    board[ask_user_placement] = "x"
+    return board
 
 def Bot_placement(board):
     computer_placement = random.randint(0,8)
     while board[computer_placement] != " ":
         computer_placement = random.randint(0,8)
     board[computer_placement] = "o"
+    return board
 
 
 while True:
@@ -115,6 +117,12 @@ while True:
     printBoard(board)
     print("\n") # Line break
 
+    board = Player_placement(board)
+    printBoard(board)
+
+    print('\n')
+    board = Bot_placement(board)
+    printBoard(board)
     break
     
     
