@@ -36,28 +36,33 @@ def printBoard(board):
 
     
 
-def value_of_cards(player_cards, bot_cards):
+def player_value_of_cards(player_cards):
     card_value = {'Ace':1, 'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':20, 'Queen':30, 'King':40}
     player_score = 0
-    bot_score = 0
+
     
     for cards in player_cards:
         player_card = cards.split(" ")[0]
         player_score += card_value.get(player_card,0)
     
+    return player_score
+   
+
+def bot_value_of_cards(bot_cards):
+    card_value = {'Ace':1, 'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':20, 'Queen':30, 'King':40}
+    bot_score = 0
     for cards in bot_cards:
         bot_card = cards.split(" ")[0]
         bot_score += card_value.get(bot_card,0)
     
-    if player_score > bot_score:
-        print("Player will place a piece")
-    elif bot_score > player_score:
-        print("Bot will place a piece")
+    return bot_score
+    
 
-    return (f"Player Score: {player_score}, Bot Score: {bot_score}")
+
 
 def Player_placement(board):
     ask_user_placement = int(input("Enter the digit you want your piece to be placed : "))
+    print('\n')
     board[ask_user_placement] = "x"
     return board
 
@@ -68,7 +73,7 @@ def Bot_placement(board):
     board[computer_placement] = "o"
     return board
 
-
+        
 while True:
     # Players deck
     player_deck = []
@@ -98,8 +103,10 @@ while True:
 
     # Show value of card
     print("\n") # Line Break
-    hand_value = value_of_cards(player_deck,bot_deck)
-    print(hand_value)
+    player_hand_value = player_value_of_cards(player_deck)
+    bot_hand_value = bot_value_of_cards(bot_deck)
+    print(f"Player score: {player_hand_value}")
+    print(f"Bot score: {bot_hand_value}")
 
     # Show demo board
     print("\n") # Line Break
@@ -117,12 +124,12 @@ while True:
     printBoard(board)
     print("\n") # Line break
 
-    board = Player_placement(board)
-    printBoard(board)
-
-    print('\n')
-    board = Bot_placement(board)
-    printBoard(board)
+    if player_hand_value > bot_hand_value:
+        board = Player_placement(board)
+        printBoard(board)
+    elif bot_hand_value > player_hand_value:
+        board = Bot_placement(board)
+        printBoard(board)
     break
     
     
