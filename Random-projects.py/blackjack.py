@@ -85,6 +85,7 @@ Do you want to make your Ace 1 or 11?
 
 
 # Creating players cards
+player_cards = []
 first_hand = empty_deck[random.randint(0,52)]
 second_hand = empty_deck[random.randint(0,52)]
 
@@ -92,10 +93,6 @@ second_hand = empty_deck[random.randint(0,52)]
 dealer_cards = []
 dealers_first_hand = empty_deck[random.randint(0,52)]
 dealers_second_hand = empty_deck[random.randint(0,52)]
-
-# Store player card
-player_cards = []
-
 
 
 
