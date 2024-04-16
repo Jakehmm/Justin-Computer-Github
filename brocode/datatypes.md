@@ -1,0 +1,4 @@
+strings
+integer
+float
+Booleans
