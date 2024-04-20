@@ -43,4 +43,7 @@ while player is not choices:
 
     if player_score >= max_score:
         break
+    print("Player wins!")
+
+    
     
