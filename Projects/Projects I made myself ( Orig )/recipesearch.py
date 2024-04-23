@@ -48,39 +48,45 @@ def Homemade_Gravlax():
     
     if user_input in ["y" , "ye" , "yes"]:
 
-        print("Alrighty, these are the ingredients you need to make 'Homemade Gravlax' \nIngredients : Salmon fillets, Butter, Garlic, Lemon Juice, Salted Butter ", "\n")
-        input("*Grabbing ingredients......* , ENTER to continue " "\n")
+        print("----------------------------------------------------- \nAlrighty, these are the ingredients you need to make 'Homemade Gravlax' \nIngredients : Salmon fillets, Butter, Garlic, Lemon Juice, Salted Butter ", "\n")
+        input("----------------------------------------------------- \n*Grabbing ingredients......* , ENTER to continue " "\n")
         print("System : It looks like we're missing a 'Salmon Fillet', you'll need to go to the seaside to catch it.", "\n")
-        input("*Transporting to seaside....* ENTER to continue" "\n")
+        input("----------------------------------------------------- \n*Transporting to seaside....* ENTER to continue" "\n")
         print("Fisherman : 'How'dy? , I'm the best fisher in the world, I'll help support you on catching the 'Salmon Fillet' ")
 
         seaside = ['Salmon Fillet' , 'junk' , 'socks', 'bread']
         fisherman_words = ['Try a bit harder' , "Don't give up!" , "Almost there!"]
 
         ask_to_fish = input("Start fishing? (y / n)? \n> ")
-
+        print("\n")
         if ask_to_fish in ["y" , "ye" , "yes"]:
             fishing = random.choice(seaside)
             while fishing != seaside[0]:
                 print(f"You've got : {fishing}...' ", "\n" , "Fisherman : " + str(random.choice(fisherman_words)))
+                print("\n") # Line break
                 ask_again = input("Continue fishing?  (y/n) \n> ")
+                print("\n") # Line break
                 if ask_again in ["y" , "ye" , "yes"]:
                     fishing = random.choice(seaside)
                 if fishing == seaside[0]:
                     print("You've got: 'Salmon' Fillet! \n *Transporting back to Chef's Kitchen* ")
-
+        print("--------------------------------------------------")
         recipe = {"Homemade Gravlax" : ["salmon fillet", "butter" ,  "garlic", "lemon juice", "salted butter"]}
         print("\n")
 
 
-        print("Ingredients : Salmon fillet, Butter, Garlic, Lemon Juice, Salted Butter")
+        print("Ingredients : Salmon fillet, Butter, Garlic, Lemon Juice, Salted Butter" "\n")
 
         ingredients_list = []
         print("To start cooking, input the ingredients one by one...")
         ingredient_1 = input("Ingredient 1:  ").lower()
+        print("--------------------------------------------------")
         ingredient_2 = input("Ingredient 2:  ").lower()
+        print("--------------------------------------------------")
         ingredient_3 = input("Ingredient 3:  ").lower()
+        print("--------------------------------------------------")
         ingredient_4 = input("Ingredient 4:  ").lower()
+        print("--------------------------------------------------")
         ingredient_5 = input("Ingredient 5:  ").lower()
 
         ingredients_list.append(ingredient_1)
@@ -107,11 +113,12 @@ def Risotto_alla_Milanese():
         main()
     
     if user_input in ["y" , "ye" , "yes"]:
-        print("----------------------------------" "\n") # Line break
+        print("\n") # Line break
         print("Alrighty, these are the ingredients you need to make 'Risotto alla Milanese' \nIngredients : Rice, Unsalted Butter, Ground Pepper, Onion ")
-        print("----------------------------------" "\n") # Line break
+        print("\n") # Line break
         input("*Grabbing ingredients......* , ENTER to continue ")
-        print("----------------------------------" "\n") # Line break
+
+        print("\n") # Line break
         print("System : It looks like we're missing 'rice' , you'll need to go to the farm to get some.")
 
 def Sichuan_Dumplings():
@@ -134,6 +141,7 @@ def Sichuan_Dumplings():
 while True:
     rules()
     input("> Continue? ")
+    print("---------------------------------------------")
     name_dish = main()
 
     if name_dish == "Homemade Gravlax":
