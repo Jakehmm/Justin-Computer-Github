@@ -3,7 +3,7 @@
 
 temp = int(input("What is the temperature outside?: "))
 
-if not(temp >= 0 and temp <= 30): # Both conditions must be true, to run
+if temp >= 0 and temp <= 30: # Both conditions must be true, to run
     print("Nice weather innit?")
 
 elif temp < 0 or temp > 30: # One condition must be true, to run
