@@ -1,4 +1,5 @@
 import random
+'''
 recipe = {"Homemade Gravlax" : ["salmon fillet", "butter" ,  "garlic", "lemon juice", "salted butter"]}
 print("\n")
 
@@ -62,4 +63,4 @@ while ingredients_list != recipe.values:
                     print("\n") # Line Break
                     print(f"You've successfully cooked an {key}")
                     print(ingredients_list)
-                    
+'''
