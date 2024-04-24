@@ -79,6 +79,7 @@ def Homemade_Gravlax():
 
         ingredients_list = []
         print("To start cooking, input the ingredients one by one...")
+        print("--------------------------------------------------")
         ingredient_1 = input("Ingredient 1:  ").lower()
         print("--------------------------------------------------")
         ingredient_2 = input("Ingredient 2:  ").lower()
@@ -95,12 +96,45 @@ def Homemade_Gravlax():
         ingredients_list.append(ingredient_4)
         ingredients_list.append(ingredient_5)
 
-        for key,value in recipe.items():
-            if ingredients_list == value:
-                print("\n")
-                print(f"You've successfully cooked an {key}")
-                return key
+        while ingredients_list != recipe.values:
+            ingredients_list.clear()
+            print("\n")
+            print("There was something wrong with your ingredients, please enter them again...")
+            print("--------------------------------------------------")
+            ingredient_1 = input("Ingredient 1:  ").lower()
+            print("--------------------------------------------------")
+            ingredient_2 = input("Ingredient 2:  ").lower()
+            print("--------------------------------------------------")
+            ingredient_3 = input("Ingredient 3:  ").lower()
+            print("--------------------------------------------------")
+            ingredient_4 = input("Ingredient 4:  ").lower()
+            print("--------------------------------------------------")
+            ingredient_5 = input("Ingredient 5:  ").lower()
+            ingredients_list.append(ingredient_1)
+            ingredients_list.append(ingredient_2)
+            ingredients_list.append(ingredient_3)
+            ingredients_list.append(ingredient_4)
+            ingredients_list.append(ingredient_5)
 
+            cook_again = ["Success" , "Fail"]
+            fail_cook = ["You messed up!" , "You might be missing an ingredient?" , "Try again!" , "No worries" , "Your almost there!"]
+
+            for key,value in recipe.items():
+                if ingredients_list == value:
+                    cook = random.choice(cook_again)
+                    while cook != "Success":
+                        print("\n")
+                        print(f"Chef : {random.choice(fail_cook)}" "\n")
+                        ask_user_input = input("Try again? (y/n) \n> ")
+                        if ask_user_input == "y":
+                            cook = random.choice(cook_again)
+                        elif ask_user_input == "n":
+                            print("You've failed!")
+                    if cook == "Success":
+                        print("\n") # Line Break
+                        print(f"You've successfully cooked an {key}")
+                        return True
+                
         
 
 def Risotto_alla_Milanese():
@@ -145,9 +179,8 @@ while True:
     name_dish = main()
 
     if name_dish == "Homemade Gravlax":
-        value = Homemade_Gravlax()
-        if value == "Homemade Gravlax":
-            break
+        success = Homemade_Gravlax()
+        if success: break
 
     if name_dish == "Risotto alla Milanese":
         Risotto_alla_Milanese()

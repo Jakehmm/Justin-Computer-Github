@@ -11,5 +11,5 @@ food.insert(0,"cake") # insert
 food.sort() # sort alpha
 food.clear() # remove all elements
 
-for x in food:
-    print(x, end=' , ')
+for i in food:
+    print(i, end=' , ')
