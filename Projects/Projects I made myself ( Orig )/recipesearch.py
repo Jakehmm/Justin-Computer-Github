@@ -4,20 +4,19 @@ def rules():
     print('''
 Welcome to Recipe Search! 
 
-Here's three dishes you can make! 
+Here's a dish you can make
 
 - Homemade Gravlax 
-- Risotto alla Milanese 
-- Sichuan Dumplings ''' "\n")
+ ''' "\n")
 
 
 def main():
     print("\n") # Line Break
     print(""" *You've been transported to the Chef's Kitchen*
- 
-- Choose one of the three dishes to make """)
+ """)
+    print("\n")
     
-    dish_choices = [ "1 : Homemade Gravlax" , "2 : Risotto alla Milanese" , "3 : Sichuan Dumplings" ]
+    dish_choices = [ "1 : Homemade Gravlax" ]
     
     for i in dish_choices:
         print(i)
@@ -28,16 +27,12 @@ def main():
 
     if user_input_dish == "1":
         return "Homemade Gravlax"
-    elif user_input_dish == "2":
-        return "Risotto alla Milanese"
-    elif user_input_dish == "3":
-        return "Sichuan Dumplings"
     else:
         return False
     
 
 def Homemade_Gravlax():
-
+    print("\n" "Welcome to Stage 1 : Easy" "\n")
     user_input = input("Your task is to make the 'Homemade Gravlax' , are you ready? (y / n) \n> ")
     while user_input == "":
         user_input = input("Your task is to make the 'Homemade Gravlax' , are you ready? (y / n) \n> ")
@@ -160,37 +155,6 @@ def cooking_Homemade_Gravlax():
                             print(f"You've successfully cooked an {key}")
                             return True
 
-def Risotto_alla_Milanese():
-    user_input = input("Your task is to make the 'Risotto alla Milanese' , are you ready? (y / n) \n> ")
-    while user_input == "":
-        user_input = input("Your task is to make the 'Risotto alla Milanese' , are you ready? (y / n) \n> ")
-    
-    if user_input in ["n" , "no"]:
-        print("Goodbye, choose another dish")
-        main()
-    
-    if user_input in ["y" , "ye" , "yes"]:
-        print("\n") # Line break
-        print("Alrighty, these are the ingredients you need to make 'Risotto alla Milanese' \nIngredients : Rice, Unsalted Butter, Ground Pepper, Onion ")
-        print("\n") # Line break
-        print("System : Seems like a challenger has arrived!")
-
-def Sichuan_Dumplings():
-    user_input = input("Your task is to make the 'Sichuan Dumplings' , are you ready? (y / n) \n> ")
-    while user_input == "":
-        user_input = input("Your task is to make the 'Sichuan Dumplings' , are you ready? (y / n) \n> ")
-    
-    if user_input in ["n" , "no"]:
-        print("Goodbye, choose another dish")
-        main()
-    
-    if user_input in ["y" , "ye" , "yes"]:
-        print("\n") # Line break
-        print("Alrighty, these are the ingredients you need to make 'Sichuan Dumplings' \nIngredients : Napa cabbage, Ground Pork, Soy Sauce, Wonton / Gyoza wrappers ")
-        print("\n") # Line break
-        input("*Grabbing ingredients......* , ENTER to continue ")
-        print("\n") # Line break
-        print("System : It looks like we're missing some 'Gyoza wrappers' , you'll need to make to buy them.")
 
 while True:
     rules()
@@ -202,12 +166,6 @@ while True:
         Homemade_Gravlax()
         success = cooking_Homemade_Gravlax()
         if success: break
-
-    if name_dish == "Risotto alla Milanese":
-        Risotto_alla_Milanese()
-
-    if name_dish == "Sichuan Dumplings":
-        Sichuan_Dumplings()
 
     if name_dish == False:
         print("Choose a dish...")
