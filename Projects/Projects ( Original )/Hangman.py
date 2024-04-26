@@ -7,7 +7,6 @@ correct_word = random.choice(words)
 display_blanks = "_" * len(correct_word)
 
 max_tries = 6
-guess = 1
 head = " "
 body = " "
 arm1 = " "
@@ -28,7 +27,7 @@ def hangman():
     print(f"\n{display_blanks}")
     
 
-while max_tries > 0 and display_blanks != correct_word:
+while max_tries > -1 and display_blanks != correct_word:
 
     hangman()
 
@@ -64,16 +63,5 @@ print(f"The word was : {correct_word} \n")
 
 if display_blanks == correct_word:
     print("You won")
-    ask_user = input("Play again? (y/n) \n> ")
-    if ask_user in ["y" , "ye" , "yes"]:
-        hangman()
-    else:
-        print("Thanks for playing! Goodbye!")
-    
 else:
-    print("You lost")
-    ask_user = input("Play again? (y/n) \n> ")
-    if ask_user in ["y" , "ye" , "yes"]:
-        hangman()
-    else:
-        print("Thanks for playing! Goodbye!")
+    print("You've lost!")
